@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Medico</title>
+</head>
+<body>
+<font face="Arial" size="5">
+    <table border="1" align="center" width="1000"  cellspacing="1">
+        <thead>
+        <td colspan="10" bgcolor="#deb887"><center><h3><u>Viendo Medico</u> </h3></center></td>
+            <tr>
+                <td align="center" bgcolor="#deb887"><b>ID</b></td>
+                <td align="center" bgcolor="#deb887"><b>Especialidad</b></td>
+                <td align="center" bgcolor="#deb887"><b>Usuario</b></td>
+                {% if perms.citas.change_medico%}
+                <td align="center" bgcolor="#deb887"><b>Editar</b></td>
+                {% endif %}
+                {% if perms.citas.del_medico%}
+                <td align="center" bgcolor="#deb887"><b>Eliminar</b></td>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+        {% for medico in object_list %}
+            <tr>
+            <td align="center">{{ medico.id }}</td>
+            <td align="center">{{ medico.get_especialidad_display}}</td>
+            <td align="center">{{ medico.user  }}</td>
+                {% if perms.citas.change_medico%}
+                <td><center><input align="center" type="button" onclick="location.href='/editmedico/{{ medico.id}}'"value="Editar"></center></td>
+                {% endif %}
+                {% if perms.citas.del_medico%}
+                <td><center><input align="center" type="button" onclick="location.href='/elimmedico/{{ medico.id}}'"value="Eliminar"></center></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        <td colspan="10" bgcolor="#deb887"><center><h5><u><input align="center" type="button" onclick="location.href='http://localhost:8000/insertarmedico/#'"
+                                                                 value="Agregar Medico" >
+            <h5><u><input align="center" type="button" onclick="location.href='/logout'" value="Cerrar Sesion" >
+        </u> </h5></center></td>
+
+        </tbody>
+    </table>
+
+</font>
+</body>
+</html>

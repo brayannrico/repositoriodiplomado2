@@ -1,0 +1,23 @@
+{% extends 'login2.html' %}
+
+{% block styles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión</title>
+</head>
+<body>
+
+<h2> Iniciar Sesión</h2>
+<form action="" method="post">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit"  value="Iniciar Sesion">
+
+</form>
+
+</body>
+</html>
+{% endblock %}

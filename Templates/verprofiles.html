@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Perfil</title>
+</head>
+<body>
+<font face="Arial" size="5">
+    <table border="1" align="center" width="1000"  cellspacing="1">
+        <thead>
+        <td colspan="10" bgcolor="#deb887"><center><h3><u>Viendo Perfil</u> </h3></center></td>
+            <tr>
+                <td align="center" bgcolor="#deb887"><b>ID</b></td>
+                <td align="center" bgcolor="#deb887"><b>Genero</b></td>
+                <td align="center" bgcolor="#deb887"><b>Documento</b></td>
+                <td align="center" bgcolor="#deb887"><b>Telefono</b></td>
+                <td align="center" bgcolor="#deb887"><b>Nacimiento</b></td>
+                <td align="center" bgcolor="#deb887"><b>Usuarios</b></td>
+                {% if perms.citas.change_profile%}
+                <td align="center" bgcolor="#deb887"><b>Editar</b></td>
+                {% endif %}
+                {% if perms.citas.del_profile%}
+                <td align="center" bgcolor="#deb887"><b>Eliminar</b></td>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+        {% for profile in object_list %}
+            <tr>
+            <td align="center">{{ profile.id }}</td>
+             <td align="center">{{ profile.get_genero_display }}</td>
+             <td align="center">{{ profile.documento }}</td>
+             <td align="center">{{ profile.telefono }}</td>
+             <td align="center">{{ profile.nacimiento }}</td>
+             <td align="center">{{ profile.user }}</td>
+                {% if perms.citas.change_profile%}
+                <td><center><input align="center" type="button" onclick="location.href='/editprofiles/{{ profile.id}}'"value="Editar"></center></td>
+                {% endif %}
+                {% if perms.citas.del_profile%}
+                <td><center><input align="center" type="button" onclick="location.href='/elimprofile/{{ profile.id}}'"value="Eliminar"></center></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+
+        <td colspan="10" bgcolor="#deb887"><center><h5><u><input align="center" type="button" onclick="location.href='http://localhost:8000/insertarprofile/#'"
+                                                                 value="Agregar Perfiles" >
+        <h5><u><input align="center" type="button" onclick="location.href='/logout'" value="Cerrar Sesion" >
+        </u> </h5></center></td>
+
+        </tbody>
+    </table>
+
+</font>
+</body>
+</html>
