@@ -76,14 +76,24 @@ WSGI_APPLICATION = 'agendamiento.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dbtlq51j8djua8',
+        'USER': 'abntcexttwmlnw',
+        'PASSWORD': '99db6dc889f14280bf4de6091d2b8fc46e711aa8b1d1291ebd3209cd301b87f7',
+        'HOST': 'ec2-174-129-242-183.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+}"""
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
