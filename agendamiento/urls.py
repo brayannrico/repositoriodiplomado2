@@ -21,6 +21,8 @@ from citas.views import Insertarcita,Insertarmedico,Insertarpaciente,Insertareps
 from citas.views import Editcita, Editeps, Editmedico, Editpaciente, Editeprofile
 from citas.views import Elimcita, Elimeps, Elimpaciente, Elimmedico, Elimprofile
 from django.conf.urls.static import static
+from agendamiento import settings
+
 urlpatterns = [
     path('grappelli/', include('grappelli.urls')), # grappelli URLS
     path('admin/', admin.site.urls), # admin site
@@ -46,4 +48,4 @@ urlpatterns = [
     path('elimprofile/<int:pk>/', Elimprofile.as_view()),
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', LogoutView.as_view()),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
