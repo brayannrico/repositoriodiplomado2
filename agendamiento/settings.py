@@ -25,7 +25,7 @@ SECRET_KEY = 'ibdb-+tpvbpv7!jnm^veiecjk5ou==g3hw5f%xvi2va1!3jy!c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['repositoriodiplomado2.herokuapp.com']
 
 
 # Application definition
