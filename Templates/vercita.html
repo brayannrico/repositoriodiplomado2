@@ -44,9 +44,9 @@
                  {% endif %}
             </tr>
         {% endfor %}
-
+        {% if perms.citas.del_agendamiento%}
         <td colspan="10" bgcolor="#1e90ff"><center><h5><u><input align="center" type="button" onclick="location.href='/insertarcita/'" value="Agregar Cita" >
-        </u> </h5>
+        {% endif %}</u> </h5>
         <h5><u><input align="center" type="button" onclick="location.href='/logout'" value="Cerrar Sesion" >
         </u> </h5></center></td>
 
