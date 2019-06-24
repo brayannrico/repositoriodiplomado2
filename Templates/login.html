@@ -1,5 +1,6 @@
+{% extends 'login2.html' %}
 
-
+{% block styles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +12,15 @@
 <h2> Iniciar Sesión</h2>
 <form action="" method="post">
 
-     {% csrf_token %}
+    {% csrf_token %}
                 <div class="form-group">
-                  {{ form.username|add:'class="form-control" placeholder="Usuario"' }}
+                  <label>Usuario:</label>
+                    {{ form.username }}
                 </div>
 
                 <div class="form-group">
-                  {{ form.password|add:'class="form-control" placeholder="Contraseña"' }}
+                  <label>Contraseña:</label>
+                    {{ form.password }}
                 </div>
       <div class="row">
         <div class="col-xs-8">
@@ -29,7 +32,8 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Iniciar Sesión </button>
+            
+          <button type="submit" class="btn btn-primary btn-block btn-flat" name="login">Iniciar Sesión </button>
         </div>
         <!-- /.col -->
       </div>
@@ -38,3 +42,4 @@
 
 </body>
 </html>
+{% endblock %}
