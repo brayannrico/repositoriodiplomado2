@@ -8,22 +8,24 @@
     <title>Ver cita</title>
 </head>
 <body>
-<font face="Arial" size="5">
-    <table border="1" align="center" width="1000"  cellspacing="1">
+<font face="arial" size =4">
+<FOND FACE="VERDANA">
+<br>
+<table width="1000" border="1" bordercolor="black"  border="5" align="center">
         <thead>
-        <td colspan="10" bgcolor="#1e90ff"><center><h3><u>Viendo Citas</u> </h3></center></td>
+        <td colspan="8" bgcolor="#f0e68c"><center><h3><u>Viendo Citas</u> </h3></center></td>
             <tr>
-                <td align="center" bgcolor="#1e90ff"><b>ID</b></td>
-                <td align="center" bgcolor="#1e90ff"><b>Tipo Cita</b></td>
-                <td align="center" bgcolor="#1e90ff"><b>Fecha</b></td>
+                <td align="center" bgcolor="#f0e68c"><b>ID</b></td>
+                <td align="center" bgcolor="#f0e68c"><b>Tipo Cita</b></td>
+                <td align="center" bgcolor="#f0e68c"><b>Fecha</b></td>
 
-                <td align="center" bgcolor="#1e90ff"><b>Medico</b></td>
-                <td align="center" bgcolor="#1e90ff"><b>Paciente</b></td>
+                <td align="center" bgcolor="#f0e68c"><b>Medico</b></td>
+                <td align="center" bgcolor="#f0e68c"><b>Paciente</b></td>
                 {% if perms.citas.change_agendamiento%}
-                <td align="center" bgcolor="#1e90ff"><b>Editar</b></td>
+                <td align="center" bgcolor="#f0e68c"><b>Editar</b></td>
                 {% endif %}
                 {% if perms.citas.del_agendamiento%}
-                 <td align="center" bgcolor="#1e90ff"><b>Eliminar</b></td>
+                 <td align="center" bgcolor="#f0e68c"><b>Eliminar</b></td>
                 {% endif %}
             </tr>
 
@@ -50,8 +52,9 @@
 
         </tbody>
     </table>
-
+</FOND>
 </font>
+
 </body>
 </html>
 {% endblock %}
