@@ -27,10 +27,12 @@
              {% csrf_token %}
                 <div class="body bg-gray">
                     <div class="form-group">
-                         {{ form.username|add:'type="text" name="userid"  placeholder="User ID"/'}}
+                        <label>Usuario</label>
+                         {{ form.username}}
                     </div>
                     <div class="form-group">
-                        {{ form.password|add:'type="password" name="password" placeholder="Password"/'}}
+                        <label>Contraseña</label>
+                        {{ form.password}}
                     </div>
                     <div class="form-group">
                         <input type="checkbox" name="remember_me"/>Rercordarme
