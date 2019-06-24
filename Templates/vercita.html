@@ -1,4 +1,5 @@
 {% extends 'index.html' %}
+{% extends 'login.html' %}
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -37,14 +38,14 @@
             <td bgcolor="#1e90ff" align="center">{{ agendamiento.medico }}</td>
             <td bgcolor="#1e90ff" align="center">{{ agendamiento.paciente }}</td>
                 {% if perms.citas.change_agendamiento%}
-                <td bgcolor="#1e90ff"><center><input align="center" type="button" onclick="location.href='/editcita/{{ agendamiento.id}}'"value="Editar"></center></td>
+                <td bgcolor="#1e90ff"><center><input align="center" type="button" class="btn bg-olive btn-block" onclick="location.href='/editcita/{{ agendamiento.id}}'"value="Editar"></center></td>
                 {% endif %}
                 {% if perms.citas.del_agendamiento%}
-                <td bgcolor="#1e90ff"><center><input align="center" type="button" onclick="location.href='/elimcita/{{ agendamiento.id}}'"value="Eliminar"></center></td>
+                <td bgcolor="#1e90ff"><center><input align="center" type="button" class="btn bg-olive btn-block" onclick="location.href='/elimcita/{{ agendamiento.id}}'"value="Eliminar"></center></td>
                  {% endif %}
             </tr>
         {% endfor %}
-        
+
 
 
         </tbody>
