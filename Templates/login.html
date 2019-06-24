@@ -10,12 +10,29 @@
 <body>
 
 <h2> Iniciar Sesión</h2>
-<form action="" method="post">
+ <form action=" " method="post">
+        {% csrf_token %}
+                <div class="form-group">
+                  {{ form.username|add:'class="form-control" placeholder="Usuario"' }}
+                </div>
 
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit"  value="Iniciar Sesion">
-
+                <div class="form-group">
+                  {{ form.password|add:'class="form-control" placeholder="Contraseña"' }}
+                </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> Recordar Contraseña
+            </label>
+          </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Iniciar Sesión </button>
+        </div>
+        <!-- /.col -->
+      </div>
 </form>
 
 </body>
