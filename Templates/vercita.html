@@ -13,7 +13,7 @@
 <br>
 <table width="1000" border="1" bordercolor="black"  border="5" align="center">
         <thead>
-        <td colspan="8" bgcolor="#f0e68c"><center><h3><u>Viendo Citas</u> </h3></center></td>
+        <td colspan="8" align="center"><center><h3><u>Viendo Citas</u> </h3></center></td>
             <tr>
                 <td align="center" bgcolor="#f0e68c"><b>ID</b></td>
                 <td align="center" bgcolor="#f0e68c"><b>Tipo Cita</b></td>
@@ -33,17 +33,17 @@
         <tbody>
         {% for agendamiento in object_list %}
             <tr>
-            <td  bgcolor="#1e90ff" align="center">{{ agendamiento.id }}</td>
-            <td bgcolor="#1e90ff"  align="center">{{ agendamiento.get_tipocita_display}}</td>
-            <td bgcolor="#1e90ff" align="center">{{ agendamiento.fecha }}</td>
+            <td  align="center">{{ agendamiento.id }}</td>
+            <td  align="center">{{ agendamiento.get_tipocita_display}}</td>
+            <td  align="center">{{ agendamiento.fecha }}</td>
 
-            <td bgcolor="#1e90ff" align="center">{{ agendamiento.medico }}</td>
-            <td bgcolor="#1e90ff" align="center">{{ agendamiento.paciente }}</td>
+            <td  align="center">{{ agendamiento.medico }}</td>
+            <td  align="center">{{ agendamiento.paciente }}</td>
                 {% if perms.citas.change_agendamiento%}
-                <td bgcolor="#1e90ff"><center><input align="center" type="button" class="btn bg-olive btn-block" onclick="location.href='/editcita/{{ agendamiento.id}}'"value="Editar"></center></td>
+                <td ><center><input align="center" type="button" class="btn bg-olive btn-block" onclick="location.href='/editcita/{{ agendamiento.id}}'"value="Editar"></center></td>
                 {% endif %}
                 {% if perms.citas.del_agendamiento%}
-                <td bgcolor="#1e90ff"><center><input align="center" type="button" class="btn bg-olive btn-block" onclick="location.href='/elimcita/{{ agendamiento.id}}'"value="Eliminar"></center></td>
+                <td ><center><input align="center" type="button" class="btn bg-olive btn-block" onclick="location.href='/elimcita/{{ agendamiento.id}}'"value="Eliminar"></center></td>
                  {% endif %}
             </tr>
         {% endfor %}
