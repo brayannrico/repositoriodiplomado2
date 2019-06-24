@@ -60,7 +60,7 @@
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                    <img src="img/login2.png"  alt="User Image" />
+                                    <img src="img/avatar2.png"  alt="User Image" />
                                 </li>
                                 <!-- Menu Body -->
 
@@ -84,12 +84,12 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="img/login2.png"  alt="User Image" />
+                            <img src="img/avatar2.png"  alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello</p>
+                            <p>Hola</p>
 
-                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                            <a href="#"><i class="fa fa-circle text-success"></i> En Linea</a>
                         </div>
                     </div>
                     <!-- search form -->
@@ -102,15 +102,17 @@
                                 <i class="fa fa-dashboard"></i> <span>Vercitas</span>
                             </a>
                         </li>
-
-
-
-                        <li>
+                         <li class="active">
+                             {% if perms.citas.del_agendamiento%}
                             <a href="/insertarcita">
-                                <input align="center" type="button" onclick="location.href='/insertarcita/'" value="Agregar Cita" >
-
+                                <i class="fa fa-dashboard"></i> <span>Insertarcita</span>
                             </a>
+                             {% endif %}
                         </li>
+
+
+
+
 
 
                     </ul>
@@ -128,7 +130,7 @@
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="/vercita"><i class="fa fa-dashboard"></i> Inicio</a></li>
-                        <li class="active">Dashboard</li>
+                        <li class="active">Viendo Citas</li>
                     </ol>
                 </section>
                 <section class="content">
