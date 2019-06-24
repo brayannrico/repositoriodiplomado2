@@ -24,6 +24,7 @@
         <div class="form-box" id="login-box">
             <div class="header">Iniciar Sesion</div>
             <form action=" " method="post">
+             {% csrf_token %}
                 <div class="body bg-gray">
                     <div class="form-group">
                          {{ form.username|add:'type="text" name="userid"  placeholder="User ID"/'}}
