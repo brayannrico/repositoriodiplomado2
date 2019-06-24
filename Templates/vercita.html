@@ -40,10 +40,10 @@
             <td  align="center">{{ agendamiento.medico }}</td>
             <td  align="center">{{ agendamiento.paciente }}</td>
                 {% if perms.citas.change_agendamiento%}
-                <td ><center><input align="center" type="button" class="btn bg-blue btn-block" onclick="location.href='/editcita/{{ agendamiento.id}}'"value="Editar"></center></td>
+                <td ><center><input align="center" type="button" class="btn bg-light-blue btn-block" onclick="location.href='/editcita/{{ agendamiento.id}}'"value="Editar"></center></td>
                 {% endif %}
                 {% if perms.citas.del_agendamiento%}
-                <td ><center><input align="center" type="button" class="btn bg-blue btn-block" onclick="location.href='/elimcita/{{ agendamiento.id}}'"value="Eliminar"></center></td>
+                <td ><center><input align="center" type="button" class="btn bg-light-blue btn-block" onclick="location.href='/elimcita/{{ agendamiento.id}}'"value="Eliminar"></center></td>
                  {% endif %}
             </tr>
         {% endfor %}
