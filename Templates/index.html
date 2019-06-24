@@ -28,7 +28,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="{% static 'Login_v1/images/img-01.png alt="IMG"'%}">
+					<img src="images/img-01.png" alt="IMG">
 				</div>
 
 				<form  action=" " method="post">
@@ -45,13 +45,13 @@
 						    </span>
                         </div>
 
-					    <div class="form-group">
-						    {{ form.password|add:'input class="input100" type="password" name="pass" placeholder="Password"'}}
-						    <span class="focus-input100"></span>
-						    <span class="symbol-input100">
-							    <i class="fa fa-lock" aria-hidden="true"></i>
-						    </span>
-					    </div>
+					<div class="form-group">
+						{{ form.password|add:'input class="input100" type="password" name="pass" placeholder="Password"'}}
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
 					
 					<div class="container-login100-form-btn">
 						<button type="submit" class="login100-form-btn">
