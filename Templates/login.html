@@ -16,13 +16,13 @@
 					<img src="images/img-01.png" alt="IMG">
 				</div>
 
-				<form action="" method="post" class="login100-form validate-form">
+				<form action="" method="post" >
 					{% csrf_token %}
                     <span class="login100-form-title">
 						Member Login
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<div class="form-group">
 						<input class="input100" type="text" name="email" placeholder="Email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
@@ -30,7 +30,7 @@
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+					<div class="form-group">
 						<input class="input100" type="password" name="pass" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
@@ -39,7 +39,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" onclick="location.href='/logout'">
 							Login
 						</button>
 					</div>
