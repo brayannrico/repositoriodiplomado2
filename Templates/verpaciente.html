@@ -1,3 +1,5 @@
+{% extends 'index.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +8,18 @@
 </head>
 <body>
 <font face="Arial" size="5">
-    <table border="1" align="center" width="1000"  cellspacing="1">
+    <table width="1000" border="1" bordercolor="black"  border="5" align="center">
         <thead>
-        <td colspan="10" bgcolor="#deb887"><center><h3><u>Viendo Pacientes</u> </h3></center></td>
+        <td colspan="10" align="center" ><center><h3><u>Viendo Pacientes</u> </h3></center></td>
             <tr>
-                <td align="center" bgcolor="#deb887"><b>ID</b></td>
-                <td align="center" bgcolor="#deb887"><b>Eps</b></td>
-                <td align="center" bgcolor="#deb887"><b>Usuario</b></td>
+                <td align="center" bgcolor="#f0e68c"><b>ID</b></td>
+                <td align="center" bgcolor="#f0e68c"><b>Eps</b></td>
+                <td align="center" bgcolor="#f0e68c"><b>Usuario</b></td>
                 {% if perms.citas.change_paciente%}
-                <td align="center" bgcolor="#deb887"><b>Editar</b></td>
+                <td align="center" bgcolor="#f0e68c"><b>Editar</b></td>
                 {% endif %}
                 {% if perms.citas.del_paciente%}
-                <td align="center" bgcolor="#deb887"><b>Eliminar</b></td>
+                <td align="center" bgcolor="#f0e68c"><b>Eliminar</b></td>
                 {% endif %}
             </tr>
         </thead>
@@ -28,22 +30,21 @@
             <td align="center">{{ paciente.eps }}</td>
             <td align="center">{{ paciente.user }}</td>
                 {% if perms.citas.change_paciente%}
-                <td><center><input align="center" type="button" onclick="location.href='/editpaciente/{{paciente.id}}'"value="Editar"></center></td>
+                <td><center><input align="center" type="button" class="btn bg-light-blue btn-block" onclick="location.href='/editpaciente/{{paciente.id}}'"value="Editar"></center></td>
                 {% endif %}
                 {% if perms.citas.del_paciente%}
-                <td><center><input align="center" type="button" onclick="location.href='/elimpaciente/{{paciente.id}}'"value="Eliminar"></center></td>
+                <td><center><input align="center" type="button" class="btn bg-light-blue btn-block"onclick="location.href='/elimpaciente/{{paciente.id}}'"value="Eliminar"></center></td>
                 {% endif %}
             </tr>
         {% endfor %}
-
-        <td colspan="10" bgcolor="#deb887"><center><h5><u><input align="center" type="button" onclick="location.href='http://localhost:8000/insertarpaciente/#'"
-                                                                 value="Agregar Paciente" >
-        <h5><u><input align="center" type="button" onclick="location.href='/logout'" value="Cerrar Sesion" >
-        </u> </h5></center></td>
-
+        {% if perms.citas.del_paciente%}
+        <td colspan="10" ><center><h5><u><input align="center" class="btn bg-light-blue btn-block" type="button" onclick="location.href='http://localhost:8000/insertarpaciente/#'"
+                                                                 value="Agregar Paciente" ></u></h5></center></td>
+        {% endif %}
         </tbody>
     </table>
 
 </font>
 </body>
 </html>
+{% endblock %}
