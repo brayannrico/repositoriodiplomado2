@@ -15,13 +15,13 @@
     {% csrf_token %}
     {{ form.as_p }}
     {% if perms.citas.change_medico%}
-        <td ><center><input align="center" type="button" class="btn bg-light-blue btn-block" onclick="location.href='/insertarmedico/{{ agendamiento.id}}'"value="Editar Medico"></center></td>
+        <td ><center><input align="center" type="button" class="btn bg-light-blue btn-block" onclick="location.href='/editmedico/{{ medico.id}}'"value="Editar Medico"></center></td>
     {% endif %}
     {% if perms.citas.change_paciente%}
-        <td ><center><input align="center" type="button" class="btn bg-light-blue btn-block" onclick="location.href='/insertarpaciente/{{ agendamiento.id}}'"value="Editar Paciente"></center></td>
+        <td ><center><input align="center" type="button" class="btn bg-light-blue btn-block" onclick="location.href='/editpaciente/{{ paciente.id}}'"value="Editar Paciente"></center></td>
     {% endif %}
     {% if perms.citas.change_eps%}
-        <td ><center><input align="center" type="button" class="btn bg-light-blue btn-block" onclick="location.href='/insertareps/{{ agendamiento.id}}'"value="Editar Eps"></center></td>
+        <td ><center><input align="center" type="button" class="btn bg-light-blue btn-block" onclick="location.href='/editeps/{{ eps.id}}'"value="Editar Eps"></center></td>
     {% endif %}
     <input align="center" type="submit" class="btn bg-light-blue btn-block"  value="Editar">
     <input align="center" type="button" class="btn bg-light-blue btn-block" onclick="location.href='/vercita'" value="Cancelar">
