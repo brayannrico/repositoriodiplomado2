@@ -44,7 +44,12 @@
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
-
+                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
@@ -60,20 +65,26 @@
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
+                                    
                                     <img src="{% static 'AdminLTE/img/logofinall.png'%}" class="img-circle"  alt="User Image" />
+                                    <p>
+                                        Usuario
+                                        <small>Bienvenido</small>
+                                    </p>
                                 </li>
                                 <!-- Menu Body -->
 
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-right">
-                                        <a href="/login" class="btn btn-default btn-flat">Desconectarse</a>
+                                        <a href="/logout" class="btn btn-default btn-flat">Desconectarse</a>
                                     </div>
                                 </li>
                             </ul>
                         </li>
                     </ul>
                 </div>
+
             </nav>
         </header>
         <div class="wrapper row-offcanvas row-offcanvas-left">
