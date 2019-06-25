@@ -14,13 +14,13 @@
     {% csrf_token %}
     {{ form.as_p }}
     {% if perms.citas.add_medico%}
-        <td ><center><input align="center" type="button" class="btn bg-light-blue btn-block" onclick="location.href='/insertarmedico/{{ agendamiento.id}}'"value="Insertar Medico"></center></td>
+        <td ><center><input align="center" type="button" class="btn bg-light-blue btn-block" onclick="location.href='/editmedico/{{ agendamiento.id}}'"value="Insertar Medico"></center></td>
     {% endif %}
     {% if perms.citas.add_paciente%}
-        <td ><center><input align="center" type="button" class="btn bg-light-blue btn-block" onclick="location.href='/insertarpaciente/{{ agendamiento.id}}'"value="Insertar Paciente"></center></td>
+        <td ><center><input align="center" type="button" class="btn bg-light-blue btn-block" onclick="location.href='/editpaciente/{{ agendamiento.id}}'"value="Insertar Paciente"></center></td>
     {% endif %}
     {% if perms.citas.add_eps%}
-        <td ><center><input align="center" type="button" class="btn bg-light-blue btn-block" onclick="location.href='/insertareps/{{ agendamiento.id}}'"value="Insertar Eps"></center></td>
+        <td ><center><input align="center" type="button" class="btn bg-light-blue btn-block" onclick="location.href='/editeps/{{ agendamiento.id}}'"value="Insertar Eps"></center></td>
     {% endif %}
     <input align="center" type="submit" class="btn bg-light-blue btn-block"  value="Guardar">
 </form>
