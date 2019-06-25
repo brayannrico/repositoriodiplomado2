@@ -52,36 +52,44 @@
                 </a>
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
-                        <!-- Messages: style can be found in dropdown.less-->
-
-                        <!-- Notifications: style can be found in dropdown.less -->
+                        <div class="btn-group">
+                             <button type="button" class="btn btn-danger dropdown-toggle"
+                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             Action
+                            </button>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                              </div>
+                        </div>
 
                         <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu"onclick="window.opener">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="glyphicon glyphicon-user"></i>
-                                <span>Usuario <i class="caret"></i></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!-- User image -->
-                                <li class="user-header bg-light-blue">
+                            <li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    <span>Usuario <i class="caret"></i></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- User image -->
+                                    <li class="user-header bg-light-blue">
 
-                                    <img src="{% static 'AdminLTE/img/logofinall.png'%}" class="img-circle"  alt="User Image" />
-                                    <p>
-                                        Usuario
-                                        <small>Bienvenido</small>
-                                    </p>
-                                </li>
-                                <!-- Menu Body -->
-
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <div class="pull-right">
-                                        <a href="/logout" class="btn btn-default btn-flat">Desconectarse</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
+                                        <img src="{% static 'AdminLTE/img/logofinall.png'%}" class="img-circle"  alt="User Image" />
+                                        <p>
+                                            Usuario
+                                            <small>Bienvenido</small>
+                                        </p>
+                                    </li>
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="pull-right">
+                                            <a href="/logout" class="btn btn-default btn-flat">Desconectarse</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
                     </ul>
                 </div>
 
