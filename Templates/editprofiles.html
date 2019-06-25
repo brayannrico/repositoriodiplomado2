@@ -1,3 +1,6 @@
+{% extends 'index.html' %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +14,7 @@
 
     {% csrf_token %}
     {{ form.as_p }}
+
     <input type="submit" value="Editar">
     <input type="button" onclick="location.href='/verprofiles'" value="Cancelar">
 
@@ -18,3 +22,4 @@
 
 </body>
 </html>
+{% endblock %}
